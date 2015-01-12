@@ -18,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'slim'
 gem 'simple_form'
+gem 'paperclip'
 
 group :development, :test do
 

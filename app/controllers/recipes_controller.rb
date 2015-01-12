@@ -30,6 +30,7 @@ end
 
 def update
 	if @recipe.update(recipe_params)
+		flash[:notice] = "Recipe Updated!"
 		redirect_to @recipe
 	else
 		render 'edit'
@@ -50,7 +51,7 @@ def find_recipe
 end
 
 def recipe_params
-	params.require(:recipe).permit(:title , :description)
+	params.require(:recipe).permit(:title , :description , :image)
 end
 
 end
