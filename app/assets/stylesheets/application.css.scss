@@ -27,3 +27,15 @@
 li.dropdown ~ li {
   text-align: center;
 }
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
