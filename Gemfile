@@ -19,6 +19,7 @@ gem 'haml'
 gem 'slim'
 gem 'simple_form'
 gem 'paperclip'
+gem 'cocoon'
 
 group :development, :test do
 

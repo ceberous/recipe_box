@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="recipe">
 
 <% @recipe.each_slice(3) do |recipes| %>
 	
@@ -8,7 +8,7 @@
 
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-		<div id="recipeImage" class="img-responsive">
+		<div id="recipeImage" class="img-responsive img_wrapper">
 			<%= image_tag recipe.image.url(:medium) , :class => "img-responsive img-center center-block" %>
 		</div>
 		
