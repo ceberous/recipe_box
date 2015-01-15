@@ -27,19 +27,28 @@ def create
 end
 
 def edit
-
+	if current_user != Recipe.find(params[:id]).user
+		redirect_to @recipe , notice: "You Can Only Edit Your Own Recipes"
+	end
 end
 
 def update
-	if @recipe.update(recipe_params)
-		flash[:notice] = "Recipe Updated!"
-		redirect_to @recipe
+	if current_user != Recipe.find(params[:id]).user
+		redirect_to @recipe , notice: "You Can Only Edit Your Own Recipes"
 	else
-		render 'edit'
+		if @recipe.update(recipe_params)
+			flash[:notice] = "Recipe Updated!"
+			redirect_to @recipe
+		else
+			render 'edit'
+		end
 	end
 end
 
 def destroy
+	if current_user != Recipe.find(params[:id]).user
+		redirect_to @recipe , notice: "You Can Only Delete Your Own Recipes"
+	end
 	@recipe.destroy
 	redirect_to root_path , notice: "Deleted Recipe"
 end
